@@ -1,24 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StopWacthApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OK2-vu-ZNG">
+                                <rect key="frame" x="132" y="21" width="150" height="150"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="IRH-kJ-Mbs"/>
+                                    <constraint firstAttribute="height" constant="150" id="oJS-ox-ym5"/>
+                                </constraints>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="A6i-DI-bQc">
+                                <rect key="frame" x="109" y="186" width="196" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="196" id="bkA-3x-9df"/>
+                                    <constraint firstAttribute="height" constant="31" id="hof-NU-cTX"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Stopwatch"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 : 00 : 00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iS1-f2-0xh">
+                                <rect key="frame" x="67" y="261" width="280" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="WEc-GH-QLE"/>
+                                    <constraint firstAttribute="height" constant="36" id="osd-CW-cG4"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="zh6-CL-01W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" style="wheels" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPe-mh-FOv">
+                                <rect key="frame" x="0.0" y="332" width="414" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="DQS-Q5-HC2"/>
+                                    <constraint firstAttribute="height" constant="216" id="quG-XN-CwA"/>
+                                </constraints>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xI5-y7-CZo">
+                                <rect key="frame" x="20" y="568" width="100" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="TmD-ve-A7q"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Stop"/>
+                                <connections>
+                                    <action selector="stopBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V7C-1X-C15"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q8p-XV-ScH">
+                                <rect key="frame" x="157" y="568" width="90" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="iPH-Uf-zLl"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Pause"/>
+                                <connections>
+                                    <action selector="pauseBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z7L-u8-tt2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3z-uI-YeM">
+                                <rect key="frame" x="284" y="568" width="110" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="zHY-IT-nFg"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Start"/>
+                                <connections>
+                                    <action selector="startBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AxR-mh-Eu3"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oPe-mh-FOv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3Jv-qT-Ktp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X3z-uI-YeM" secondAttribute="trailing" constant="20" id="GaJ-zS-6NH"/>
+                            <constraint firstItem="X3z-uI-YeM" firstAttribute="leading" secondItem="Q8p-XV-ScH" secondAttribute="trailing" constant="37" id="MIN-mw-hXH"/>
+                            <constraint firstItem="Q8p-XV-ScH" firstAttribute="leading" secondItem="xI5-y7-CZo" secondAttribute="trailing" constant="37" id="Msc-N1-B4f"/>
+                            <constraint firstItem="OK2-vu-ZNG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="21" id="Puz-gK-76m"/>
+                            <constraint firstItem="Q8p-XV-ScH" firstAttribute="top" secondItem="oPe-mh-FOv" secondAttribute="bottom" constant="20" id="X9o-zD-tbs"/>
+                            <constraint firstItem="iS1-f2-0xh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="a9I-g6-idD"/>
+                            <constraint firstItem="A6i-DI-bQc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="109" id="amR-1t-eWZ"/>
+                            <constraint firstItem="xI5-y7-CZo" firstAttribute="top" secondItem="oPe-mh-FOv" secondAttribute="bottom" constant="20" id="e0s-eo-6Mv"/>
+                            <constraint firstItem="A6i-DI-bQc" firstAttribute="top" secondItem="OK2-vu-ZNG" secondAttribute="bottom" constant="15" id="h4A-Kj-3sU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OK2-vu-ZNG" secondAttribute="trailing" constant="132" id="h7V-uY-SLC"/>
+                            <constraint firstItem="xI5-y7-CZo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="jbD-oS-iDF"/>
+                            <constraint firstItem="oPe-mh-FOv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="k0B-1Z-5WE"/>
+                            <constraint firstItem="iS1-f2-0xh" firstAttribute="top" secondItem="A6i-DI-bQc" secondAttribute="bottom" constant="44" id="lNT-N5-IBV"/>
+                            <constraint firstItem="X3z-uI-YeM" firstAttribute="top" secondItem="oPe-mh-FOv" secondAttribute="bottom" constant="20" id="nrq-vg-BzJ"/>
+                            <constraint firstItem="oPe-mh-FOv" firstAttribute="top" secondItem="iS1-f2-0xh" secondAttribute="bottom" constant="35" id="rUd-1Y-ooG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iS1-f2-0xh" secondAttribute="trailing" constant="67" id="sEF-N1-faw"/>
+                            <constraint firstItem="OK2-vu-ZNG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="132" id="vn1-hl-Rwt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="A6i-DI-bQc" secondAttribute="trailing" constant="109" id="xQG-Kt-6Y6"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageViewClock" destination="OK2-vu-ZNG" id="JcD-GN-b0W"/>
+                        <outlet property="labelTimer" destination="iS1-f2-0xh" id="Ltj-Vz-cvy"/>
+                        <outlet property="pause" destination="Q8p-XV-ScH" id="gj1-hE-1KB"/>
+                        <outlet property="picker" destination="oPe-mh-FOv" id="Oed-Bv-3Wj"/>
+                        <outlet property="start" destination="X3z-uI-YeM" id="vwA-Ln-wgp"/>
+                        <outlet property="stop" destination="xI5-y7-CZo" id="ahz-Cx-yKQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="69.642857142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
